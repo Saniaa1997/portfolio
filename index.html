@@ -159,5 +159,36 @@
             <button type="submit" class="btn">Send</button>
         </form>
     </section>
+    
+<script>
+    // Smooth Scrolling for navigation links and buttons
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Contact form submission handler
+    document.querySelector('#contact form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent actual form submission
+        alert('Thank you for reaching out! I will get back to you soon.');
+        this.reset(); // Reset the form fields
+    });
+
+    // Add dynamic date to footer (if footer exists)
+    const footer = document.createElement('footer');
+    footer.style.textAlign = 'center';
+    footer.style.padding = '1rem';
+    footer.style.background = '#2F4F4F';
+    footer.style.color = '#F9D7D6';
+    footer.textContent = `© ${new Date().getFullYear()} Sania's Portfolio. All rights reserved.`;
+    document.body.appendChild(footer);
+</script>
+</body>
+</html>
+
 </body>
 </html>
